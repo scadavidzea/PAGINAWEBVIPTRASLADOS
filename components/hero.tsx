@@ -10,7 +10,7 @@ export function Hero() {
   return (
     <section id="inicio" className="relative min-h-screen flex items-center overflow-hidden">
       <Image
-        src="/images/hero-premium.jpg"
+        src="https://uoqpdbwtnkhiikqkiqwy.supabase.co/storage/v1/object/public/tour-images/BANNER/BANNERINDEX.jpeg"
         alt="Vista panoramica premium de Medellin Colombia"
         fill
         className="object-cover"
