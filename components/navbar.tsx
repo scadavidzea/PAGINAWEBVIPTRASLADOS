@@ -39,8 +39,8 @@ export function Navbar() {
           <Image
             src="https://uoqpdbwtnkhiikqkiqwy.supabase.co/storage/v1/object/public/tour-images/LOGOVIPTRASLADOS/LOGOVIP.png"
             alt="VIP Traslados Logo"
-            width={48}
-            height={48}
+            width={56}
+            height={56}
             className="object-contain"
             priority
           />
