@@ -16,7 +16,7 @@ export function Hero() {
         className="object-cover"
         priority
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/25 to-black/50" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/50 to-black/70" />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 py-32 lg:px-8">
         <div className="max-w-3xl">
