@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter, Cormorant_Garamond } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
 import { LanguageProvider } from '@/lib/language-context'
 import './globals.css'
 
@@ -46,7 +45,6 @@ export default function RootLayout({
       <body className={`${inter.variable} ${cormorant.variable} font-sans antialiased`}>
         <LanguageProvider>
           {children}
-          <Analytics />
         </LanguageProvider>
       </body>
     </html>

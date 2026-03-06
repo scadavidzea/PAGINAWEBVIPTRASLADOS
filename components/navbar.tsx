@@ -2,12 +2,16 @@
 
 import { useState, useEffect } from "react"
 import { Menu, X, Phone } from "lucide-react"
+import Image from "next/image"
+import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { LanguageSwitcher } from "@/components/language-switcher"
 import { useLanguage } from "@/lib/language-context"
 
 export function Navbar() {
   const { t } = useLanguage()
+  const pathname = usePathname()
+  const isHomepage = pathname === "/"
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
@@ -28,21 +32,25 @@ export function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-card/95 backdrop-blur-xl shadow-sm"
-          : "bg-transparent"
+        isHomepage
+          ? scrolled
+            ? "bg-card/95 backdrop-blur-xl shadow-sm"
+            : "bg-gradient-to-b from-black/60 to-black/40 backdrop-blur-lg shadow-sm"
+          : scrolled
+            ? "bg-card/95 backdrop-blur-xl shadow-sm"
+            : "bg-white shadow-sm"
       }`}
     >
       <nav className="flex items-center justify-between gap-6 px-4 py-4 max-w-7xl mx-auto lg:px-8">
-        <a href="/" className="flex items-center gap-3 shrink-0">
-          <div className="flex flex-col leading-none">
-            <span className={`font-serif text-2xl font-bold tracking-tight ${scrolled ? "text-foreground" : "text-[oklch(1_0_0)]"}`}>
-              VIP
-            </span>
-            <span className={`text-[10px] font-semibold tracking-[0.3em] uppercase ${scrolled ? "text-accent" : "text-[oklch(0.75_0.12_85)]"}`}>
-              Traslados
-            </span>
-          </div>
+        <a href="/" className="flex items-center gap-2 shrink-0">
+          <Image
+            src="https://uoqpdbwtnkhiikqkiqwy.supabase.co/storage/v1/object/public/tour-images/LOGOVIPTRASLADOS/LOGOVIP.png"
+            alt="VIP Traslados Logo"
+            width={56}
+            height={56}
+            className="object-contain"
+            priority
+          />
         </a>
 
         <ul className="hidden lg:flex items-center gap-8">
@@ -51,9 +59,13 @@ export function Navbar() {
               <a
                 href={link.href}
                 className={`text-sm font-medium transition-colors ${
-                  scrolled
-                    ? "text-muted-foreground hover:text-foreground"
-                    : "text-[oklch(1_0_0)]/70 hover:text-[oklch(1_0_0)]"
+                  isHomepage
+                    ? scrolled
+                      ? "text-muted-foreground hover:text-foreground"
+                      : "text-[oklch(1_0_0)]/70 hover:text-[oklch(1_0_0)]"
+                    : scrolled
+                      ? "text-muted-foreground hover:text-foreground"
+                      : "text-foreground/70 hover:text-foreground"
                 }`}
               >
                 {link.label}
@@ -67,7 +79,13 @@ export function Navbar() {
           <a
             href="tel:+573001234567"
             className={`flex items-center gap-2 text-sm font-medium transition-colors ${
-              scrolled ? "text-foreground" : "text-[oklch(1_0_0)]"
+              isHomepage
+                ? scrolled
+                  ? "text-foreground"
+                  : "text-[oklch(1_0_0)]"
+                : scrolled
+                  ? "text-foreground"
+                  : "text-foreground"
             }`}
           >
             <Phone className="h-4 w-4" />
@@ -79,7 +97,15 @@ export function Navbar() {
         </div>
 
         <button
-          className={`lg:hidden p-2 ${scrolled ? "text-foreground" : "text-[oklch(1_0_0)]"}`}
+          className={`lg:hidden p-2 ${
+            isHomepage
+              ? scrolled
+                ? "text-foreground"
+                : "text-[oklch(1_0_0)]"
+              : scrolled
+                ? "text-foreground"
+                : "text-foreground"
+          }`}
           onClick={() => setIsOpen(!isOpen)}
           aria-label={isOpen ? "Cerrar menu" : "Abrir menu"}
         >

@@ -10,15 +10,15 @@ export function Hero() {
   return (
     <section id="inicio" className="relative min-h-screen flex items-center overflow-hidden">
       <Image
-        src="/images/hero-premium.jpg"
+        src="https://uoqpdbwtnkhiikqkiqwy.supabase.co/storage/v1/object/public/tour-images/BANNER/BANNERINDEX.jpeg"
         alt="Vista panoramica premium de Medellin Colombia"
         fill
         className="object-cover"
         priority
       />
-      <div className="absolute inset-0 bg-[oklch(0.1_0.01_60)]/75" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/70 to-black/85" />
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 py-32 lg:px-8">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 py-32 lg:px-8 pt-32 lg:pt-40">
         <div className="max-w-3xl">
           <div className="flex items-center gap-3 mb-8">
             <div className="h-px w-12 bg-[oklch(0.75_0.12_85)]" />
@@ -68,7 +68,7 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black via-black/80 to-transparent" />
     </section>
   )
 }
