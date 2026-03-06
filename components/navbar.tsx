@@ -37,10 +37,10 @@ export function Navbar() {
       <nav className="flex items-center justify-between gap-6 px-4 py-4 max-w-7xl mx-auto lg:px-8">
         <a href="/" className="flex items-center gap-2 shrink-0">
           <Image
-            src="https://uoqpdbwtnkhiikqkiqwy.supabase.co/storage/v1/object/public/tour-images/LOGOVIPTRASLADOS/LOGOVIPTRASLADOS.jpeg"
+            src="https://uoqpdbwtnkhiikqkiqwy.supabase.co/storage/v1/object/public/tour-images/LOGOVIPTRASLADOS/LOGOVIP.png"
             alt="VIP Traslados Logo"
-            width={50}
-            height={50}
+            width={48}
+            height={48}
             className="object-contain"
             priority
           />
