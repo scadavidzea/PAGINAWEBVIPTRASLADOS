@@ -57,13 +57,13 @@ export async function Tours() {
             <p className="text-muted-foreground">No tours available at the moment.</p>
           </div>
         ) : (
-          <div className="grid lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-6">
             {tours.map((tour) => (
               <div
                 key={tour.id}
                 className="group flex flex-col sm:flex-row rounded-lg overflow-hidden bg-card border border-border hover:border-accent/30 transition-all duration-500"
               >
-                <div className="relative sm:w-64 h-56 sm:h-auto shrink-0 overflow-hidden bg-muted">
+                <div className="relative sm:w-48 md:sm:w-56 h-40 sm:h-44 md:h-56 shrink-0 overflow-hidden bg-muted">
                   {tour.tour_images && tour.tour_images.length > 0 && (
                     <Image
                       src={tour.tour_images[0].image_url}
@@ -76,16 +76,16 @@ export async function Tours() {
                     {tour.tag_es}
                   </span>
                 </div>
-                <div className="flex flex-col justify-between p-6 flex-1">
+                <div className="flex flex-col justify-between p-4 md:p-6 flex-1">
                   <div>
                     <div className="flex items-center gap-1 mb-2">
                       <Star className="h-3.5 w-3.5 text-accent fill-accent" />
                       <span className="text-xs font-medium text-foreground">{tour.rating}</span>
                     </div>
-                    <h3 className="font-serif text-xl font-semibold text-foreground mb-2">
+                    <h3 className="font-serif text-base md:text-xl font-semibold text-foreground mb-2">
                       {tour.name_es}
                     </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                    <p className="text-muted-foreground text-xs md:text-sm leading-relaxed mb-4 hidden md:block">
                       {tour.description_short_es}
                     </p>
                     <div className="flex items-center gap-4 text-muted-foreground text-xs mb-5">

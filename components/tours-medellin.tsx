@@ -83,13 +83,13 @@ export function ToursMedellin() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 lg:gap-6">
           {medellinTours.map((tour) => (
             <div
               key={tour.key}
               className="group rounded-lg overflow-hidden bg-[oklch(0.22_0.01_60)] border border-primary-foreground/5 hover:border-[oklch(0.75_0.12_85)]/30 transition-all duration-500"
             >
-              <div className="relative h-52 overflow-hidden">
+              <div className="relative h-40 md:h-48 lg:h-52 overflow-hidden">
                 <Image
                   src={tour.image}
                   alt={tour.title}
@@ -111,17 +111,17 @@ export function ToursMedellin() {
                   </span>
                 </div>
               </div>
-              <div className="p-6">
+              <div className="p-3 md:p-4 lg:p-6">
                 <div className="flex items-center gap-1.5 mb-2">
                   <MapPin className="h-3.5 w-3.5 text-[oklch(0.75_0.12_85)]" />
                   <span className="text-xs text-primary-foreground/40 font-medium tracking-wide uppercase">
                     {tour.subtitle}
                   </span>
                 </div>
-                <h3 className="font-serif text-xl font-semibold text-primary-foreground mb-2">
+                <h3 className="font-serif text-sm md:text-base lg:text-xl font-semibold text-primary-foreground mb-2 md:mb-3">
                   {tour.title}
                 </h3>
-                <p className="text-primary-foreground/40 text-sm leading-relaxed mb-5">
+                <p className="text-primary-foreground/40 text-xs md:text-sm leading-relaxed mb-3 md:mb-5 hidden md:block">
                   {tour.description}
                 </p>
                 <Button

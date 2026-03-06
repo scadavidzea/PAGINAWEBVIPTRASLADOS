@@ -52,14 +52,14 @@ export async function ToursGrid() {
             <p className="text-muted-foreground">No tours available at the moment.</p>
           </div>
         ) : (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 lg:gap-6">
             {tours.map((tour) => (
               <div
                 key={tour.id}
                 className="group flex flex-col rounded-lg overflow-hidden bg-card border border-border hover:border-accent/50 transition-all duration-500 hover:shadow-lg"
               >
                 {/* Image */}
-                <div className="relative h-64 overflow-hidden bg-muted">
+                <div className="relative h-40 md:h-52 lg:h-64 overflow-hidden bg-muted">
                   {tour.tour_images && tour.tour_images.length > 0 && (
                     <Image
                       src={tour.tour_images[0].image_url}
@@ -83,7 +83,7 @@ export async function ToursGrid() {
                 </div>
 
                 {/* Content */}
-                <div className="flex flex-col flex-1 p-6">
+                <div className="flex flex-col flex-1 p-3 md:p-4 lg:p-6">
                   {/* Rating */}
                   <div className="flex items-center gap-1 mb-3">
                     <Star className="h-4 w-4 text-accent fill-accent" />
@@ -91,17 +91,17 @@ export async function ToursGrid() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-serif text-xl font-semibold text-foreground mb-3 line-clamp-2">
+                  <h3 className="font-serif text-sm md:text-base lg:text-xl font-semibold text-foreground mb-2 md:mb-3 line-clamp-2">
                     {tour.name_es}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-5 line-clamp-2">
+                  <p className="text-muted-foreground text-xs md:text-sm leading-relaxed mb-3 md:mb-5 line-clamp-2 hidden md:block">
                     {tour.description_short_es}
                   </p>
 
                   {/* Details */}
-                  <div className="grid grid-cols-2 gap-4 mb-6 py-4 border-t border-border">
+                  <div className="grid grid-cols-2 gap-2 md:gap-4 mb-4 md:mb-6 py-2 md:py-4 border-t border-border">
                     <div className="flex items-center gap-2 text-muted-foreground text-xs">
                       <Clock className="h-4 w-4 text-accent" />
                       <span>{tour.duration}</span>
