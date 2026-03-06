@@ -18,7 +18,7 @@ export function Hero() {
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/70 to-black/85" />
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 py-32 lg:px-8">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 py-32 lg:px-8 pt-32 lg:pt-40">
         <div className="max-w-3xl">
           <div className="flex items-center gap-3 mb-8">
             <div className="h-px w-12 bg-[oklch(0.75_0.12_85)]" />
