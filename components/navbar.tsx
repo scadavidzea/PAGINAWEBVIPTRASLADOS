@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { Menu, X, Phone } from "lucide-react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { LanguageSwitcher } from "@/components/language-switcher"
 import { useLanguage } from "@/lib/language-context"
@@ -34,15 +35,15 @@ export function Navbar() {
       }`}
     >
       <nav className="flex items-center justify-between gap-6 px-4 py-4 max-w-7xl mx-auto lg:px-8">
-        <a href="/" className="flex items-center gap-3 shrink-0">
-          <div className="flex flex-col leading-none">
-            <span className={`font-serif text-2xl font-bold tracking-tight ${scrolled ? "text-foreground" : "text-[oklch(1_0_0)]"}`}>
-              VIP
-            </span>
-            <span className={`text-[10px] font-semibold tracking-[0.3em] uppercase ${scrolled ? "text-accent" : "text-[oklch(0.75_0.12_85)]"}`}>
-              Traslados
-            </span>
-          </div>
+        <a href="/" className="flex items-center gap-2 shrink-0">
+          <Image
+            src="https://uoqpdbwtnkhiikqkiqwy.supabase.co/storage/v1/object/public/tour-images/LOGOVIPTRASLADOS/LOGOVIPTRASLADOS.jpeg"
+            alt="VIP Traslados Logo"
+            width={50}
+            height={50}
+            className="object-contain"
+            priority
+          />
         </a>
 
         <ul className="hidden lg:flex items-center gap-8">
